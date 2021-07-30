@@ -1,6 +1,6 @@
 <template lang="pug">
   div(id="app")
-    vue-good-table( :columns="columns" :rows="rows")
+    vue-good-table( :columns="columns" :rows="rows" :sort-options='{enabled:false}')
       template(slot='table-row' slot-scope='props')
         span(class='wrap' v-if="props.column.field == 'age'")
           span(:class="getCellClass(props.row.age)") {{ props.row.age }}
