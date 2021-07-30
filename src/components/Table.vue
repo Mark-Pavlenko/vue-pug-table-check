@@ -28,11 +28,11 @@ export default {
         },
       ],
       rows: [
-        {id: 1, name: "John", age: Math.floor(Math.random() * 20), createdAt: '201-10-31:9: 35 am', score: 0.03343},
-        {id: 2, name: "Jane", age: Math.floor(Math.random() * 20), createdAt: '2011-10-31', score: 0.03343},
-        {id: 3, name: "Susan", age: Math.floor(Math.random() * 20), createdAt: '2011-10-30', score: 0.03343},
-        {id: 4, name: "Chris", age: Math.floor(Math.random() * 20), createdAt: '2011-10-11', score: 0.03343},
-        {id: 5, name: "Dan", age: Math.floor(Math.random() * 20), createdAt: '2011-10-21', score: 0.03343},
+        {id: 1, name: "John", age: Math.floor(Math.random() * 10), createdAt: '201-10-31:9: 35 am', score: 0.03343},
+        {id: 2, name: "Jane", age: Math.floor(Math.random() * 10), createdAt: '2011-10-31', score: 0.03343},
+        {id: 3, name: "Susan", age: Math.floor(Math.random() * 10), createdAt: '2011-10-30', score: 0.03343},
+        {id: 4, name: "Chris", age: Math.floor(Math.random() * 10), createdAt: '2011-10-11', score: 0.03343},
+        {id: 5, name: "Dan", age: Math.floor(Math.random() * 10), createdAt: '2011-10-21', score: 0.03343},
       ],
     };
   },
