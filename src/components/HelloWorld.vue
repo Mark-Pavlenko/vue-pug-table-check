@@ -8,13 +8,14 @@
       tr(v-for='item in items' :key="item.id")
         td {{item.id}}
         td {{item.name}}
-        td( v-if=this.extraNumbers :class="{ isMoreThanAllowed: showMobileMenu }") {{item.number}}
+        td( v-bind:class="{ bgDanger: customerStatusIsTwo(item) }") {{item.number}}
       tr
 
     //button(@click="showMobileMenu = !showMobileMenu") Check
-    button(@click="getExtraElements") Check
+    button(@click="customerStatusIsTwo") Check
 
 </template>
+
 <script>
 
 export default {
@@ -47,23 +48,26 @@ export default {
           number: Math.floor(Math.random() * 20)
         }
       ],
-      allItemsNumbers: [],
-      extraNumbers: [],
-      showMobileMenu: false
+      // allItemsNumbers: [],
+      // extraNumbers: [],
+      // showMobileMenu: false
     };
   },
   methods: {
-    getExtraElements() {
-      for(let i =0; i < this.items.length; i++){
-        this.allItemsNumbers.push(this.items[i].number);
-      }
-      console.log(this.allItemsNumbers);
-      this.extraNumbers = this.allItemsNumbers.filter(item => item > 5);
-      console.log(this.extraNumbers);
-
-      //поэлементно сравнить 2 массива и там, где элементы второго массива сходятся с ключами - добавить класс???
-
-      this.showMobileMenu = !this.showMobileMenu
+    // getExtraElements() {
+    //   for(let i =0; i < this.items.length; i++){
+    //     this.allItemsNumbers.push(this.items[i].number);
+    //   }
+    //   console.log(this.allItemsNumbers);
+    //   this.extraNumbers = this.allItemsNumbers.filter(item => item > 5);
+    //   console.log(this.extraNumbers);
+    //
+    //   //поэлементно сравнить 2 массива и там, где элементы второго массива сходятся с ключами - добавить класс???
+    //
+    //   this.showMobileMenu = !this.showMobileMenu
+    // },
+    customerStatusIsTwo : function(items){
+      return items.number > 5
     }
   },
   mounted() {
@@ -93,7 +97,8 @@ tr:nth-child(even) {
   color: red
 }
 
-.isMoreThanAllowed {
+
+.bgDanger{
   border: 1px solid red;
 }
 

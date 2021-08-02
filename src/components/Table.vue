@@ -3,8 +3,9 @@
     vue-good-table( :columns="columns" :rows="rows" :sort-options='{enabled:false}')
       template(slot='table-row' slot-scope='props')
         span(class='wrap' v-if="props.column.field == 'age'")
-          span(:class="getCellClass(props.row.age)") {{ props.row.age }}
+          span(:class="") {{ props.row.age }}
         span(v-else) {{ props.formattedRow[props.column.field] }}
+    button(@click="getCellClass(this.first)") Text
 </template>
 
 <script>
@@ -41,6 +42,9 @@ export default {
       return age > 5 ? 'is-green' : '';
     },
   },
+  props:{
+    first: this.row.age
+  }
 }
 </script>
 
