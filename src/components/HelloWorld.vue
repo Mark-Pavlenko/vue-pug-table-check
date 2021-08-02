@@ -8,11 +8,10 @@
       tr(v-for='item in items' :key="item.id")
         td {{item.id}}
         td {{item.name}}
-        td( v-bind:class="{ bgDanger: customerStatusIsTwo(item) }") {{item.number}}
+        td(  :class="{ bgDanger: checkValidValue(item) }") {{item.number}}
       tr
 
-    //button(@click="showMobileMenu = !showMobileMenu") Check
-    button(@click="customerStatusIsTwo") Check
+    button(@click="checkValidValue") Check
 
 </template>
 
@@ -47,27 +46,12 @@ export default {
           name: 'Sam',
           number: Math.floor(Math.random() * 20)
         }
-      ],
-      // allItemsNumbers: [],
-      // extraNumbers: [],
-      // showMobileMenu: false
+      ]
     };
   },
   methods: {
-    // getExtraElements() {
-    //   for(let i =0; i < this.items.length; i++){
-    //     this.allItemsNumbers.push(this.items[i].number);
-    //   }
-    //   console.log(this.allItemsNumbers);
-    //   this.extraNumbers = this.allItemsNumbers.filter(item => item > 5);
-    //   console.log(this.extraNumbers);
-    //
-    //   //поэлементно сравнить 2 массива и там, где элементы второго массива сходятся с ключами - добавить класс???
-    //
-    //   this.showMobileMenu = !this.showMobileMenu
-    // },
-    customerStatusIsTwo : function(items){
-      return items.number > 5
+    checkValidValue(items){
+      return items.number > 5;
     }
   },
   mounted() {
@@ -92,11 +76,6 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-
-.default {
-  color: red
-}
-
 
 .bgDanger{
   border: 1px solid red;
