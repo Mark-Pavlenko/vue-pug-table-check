@@ -9,7 +9,7 @@
 <script>
 
 // import Table from "./components/Table";
-import HelloWorld from "./components/HelloWorld";
+import HelloWorld from "./components/FinalSolution";
 
 export default {
   name: 'App',
